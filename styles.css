@@ -10,7 +10,8 @@
 }
 
 .body {
-   
+    max-width: 100wh;
+    min-height: 100vh;
     background-image: url(images/gradient4.jpg);
     /* backdrop-filter: blur(100px); */
     background-repeat: no-repeat;
