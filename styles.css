@@ -9,7 +9,7 @@
     --main-text-color: black;
 }
 
-body {
+.body {
     margin: 0px;
     max-width: 100wh;
     min-height: 100vh;
