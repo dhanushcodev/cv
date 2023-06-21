@@ -14,7 +14,7 @@
     background-image: url(images/gradient4.jpg);
     /* backdrop-filter: blur(100px); */
     background-repeat: no-repeat;
-    background-size: 100vw 100vh;
+/*     background-size: 100vw 100vh; */
     background-attachment: fixed;
     font-family: 'Montserrat';
 
