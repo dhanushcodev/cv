@@ -1,33 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Gajraj+One&family=Montserrat&family=Ubuntu&display=swap');
 
+
 :root {
     --main-color-dark: #096161;
-    --main-color-medium: #2e9696;
-    --main-color-light: #c8fbf2;
+    --main-color-medium: rgb(2, 76, 101);
+    --main-color-light: rgb(0, 99, 132);
     --main-background: #1d1d1d;
+    --main-text-color: black;
 }
 
 .body {
     max-width: 100vw;
-    background-color: #1d1d1d;
+    background-image: url(images/gradient4.jpg);
+    /* backdrop-filter: blur(100px); */
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+    background-attachment: fixed;
     font-family: 'Montserrat';
 
 }
 
-/* .animation-section {
-    opacity: 0;
-    filter: blur(5px);
-    transform: translateY(40px);
-    transition: all 1s;
-    animation-timing-function: ease-in;
-    animation-delay: 1s;
-}
-
-.show{
-    opacity: 1;
-    filter: blur(0px);
-    transform: translateY(0);
-} */
 
 /* title section */
 
@@ -48,14 +40,16 @@
     min-width: 100%;
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border-radius: 20px;
+    /* border-radius: 20px; */
     margin: 2px;
     z-index: 1;
 
 }
 
 
-
+nav .nav-link {
+    color: black;
+}
 
 .navbar-brand span {
     color: var(--main-color-dark);
@@ -80,13 +74,13 @@
     font-size: 4rem;
     font-weight: bolder;
     margin: 30vh 1rem 0 4rem;
-    color: whitesmoke;
+    color: var(--main-text-color);
     
 }
 
 #title .row h2 {
     position: absolute;
-    color: whitesmoke;
+    color: var(--main-text-color);
     font-size: 2rem;
     margin: 1rem 4rem;
     
@@ -100,9 +94,9 @@
 
 
 #coder-img {
-    margin: 15vh 2rem 0 4rem;
-    border-radius: 10px;
-    width: 500px;
+    margin: 25vh 2rem 0 4rem;
+    border-radius: 50%;
+    width: 350px;
     max-width: 100%;
 }
 
@@ -119,10 +113,10 @@
 
 #passion h1 {
     font-size: 2rem;
-    color: whitesmoke;
+    color: var(--main-color-light);
     padding: 7rem 0 0 7rem;
     letter-spacing: 1px;
-    font-weight: bolder;
+    font-weight: bold;
     animation: slideTop 2s ease 0 1 forwards forwards;
 }
 
@@ -150,7 +144,7 @@
 }
 
 #passion .container-fluid p {
-    color: whitesmoke;
+    color: var(--main-text-color);
     display: inline-block;
 }
 
@@ -181,9 +175,9 @@
 }
 
 /* about section */
-/* 
+
 #about{
-    min-height: 100vh;
+    height: 100vh;
     background-color: var(--main-background);
 }
 
@@ -195,18 +189,30 @@
 #about h1{
     margin: auto 4rem;
     font-size: 2rem;
-    color: whitesmoke;
+    color: var(--main-text-color);
 }
 
 #about span{
     color: var(--main-color-medium);
-} */
+}
 
+#about hr {
+    width: 70%;
+    color: var(--main-color-dark);
+    border-width: 1px;
+    margin: 0 auto;
+}   
 
+#about .profile-img{
+    max-width: 200px;
+    border-radius: 50%;
+}
+
+/* contact section */
 
 #contact h1 {
     padding-top: 10vh;
-    color: whitesmoke;
+    color: var(--main-color-light);
 }
 
 #contact .container-fluid {
@@ -217,7 +223,7 @@
     margin-top: 5vh;
     padding: 2vh;
     margin-bottom: 5vh;
-    box-shadow: 0px 0px 3px #262a2e, -0px -0px 3px #262a2e;
+    /* box-shadow: 0px 0px 20px #262a2e, -0px -0px 20px #262a2e; */
     border-radius: 10px;
 }
 
@@ -233,17 +239,17 @@
 }
 
 #contact h2 {
-    color: whitesmoke;
+    color: var(--main-color-light);
     margin: 1rem 0 1rem 0;
 }
 
 #contact p {
-    color: whitesmoke;
+    color: var(--main-text-color);
 }
 
 #contact a {
     text-decoration: none;
-    color: whitesmoke;
+    color: var(--main-text-color);
 
 }
 
@@ -252,7 +258,7 @@
 }
 
 i {
-    color: whitesmoke;
+    color: var(--main-text-color);
     margin: 10px;
 }
 
@@ -302,21 +308,25 @@ i:hover {
 
     #coder-img {
         position: relative;
-        margin: 10vh auto 5vh auto;
-        width: 100%;
+        margin: 20vh auto 5vh auto;
+        width: 70%;
         max-width: 100%;
+    }
+
+    #title nav a {
+        font-size: 95%;
     }
 
     #title .row h1 {
         font-size: 2rem;
         font-weight: bolder;
         margin: 0 1rem 0 1rem;
-        color: whitesmoke;
+        color: var(--main-text-color);
     }
 
 
     #title .row h2 {
-        color: whitesmoke;
+        color: var(--main-text-color);
         font-size: 1.5rem;
         margin: 1rem 1rem 0 1rem;
     }
@@ -340,7 +350,7 @@ i:hover {
 
     #passion h1 {
         font-size: 2rem;
-        color: whitesmoke;
+        color: var(--main-text-color);
         padding: 10vh 0 0 0;
         letter-spacing: 1px;
         font-weight: bolder;
