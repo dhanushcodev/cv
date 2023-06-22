@@ -10,7 +10,7 @@
 }
 
 .body {
-     margin: 0px;
+    margin: 0px;
     max-width: 100vw;
     min-height: 100vh;  
     background-image: linear-gradient(45deg,#f0e1f6,#d2dffe,#ccdfff);
@@ -22,6 +22,22 @@
 
 }
 
+
+
+/* .animation-section {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateY(40px);
+    transition: all 1s;
+    animation-timing-function: ease-in;
+    animation-delay: 1s;
+}
+
+.show{
+    opacity: 1;
+    filter: blur(0px);
+    transform: translateY(0);
+} */
 
 /* title section */
 
