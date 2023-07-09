@@ -3,41 +3,47 @@
 
 :root {
     --main-color-dark: #096161;
-    --main-color-medium: rgb(2, 76, 101);
-    --main-color-light: rgb(0, 99, 132);
+    --main-color-medium: #2e9696;
+    --main-color-light: #c8fbf2;
     --main-background: #1d1d1d;
-    --main-text-color: black;
+}
+
+html::-webkit-scrollbar{
+    display: none;
 }
 
 .body {
-    margin: 0px;
     max-width: 100vw;
-    min-height: 100vh;  
-    background-image: linear-gradient(45deg,#f0e1f6,#d2dffe,#ccdfff);
-    /* backdrop-filter: blur(100px); */
-    background-repeat: no-repeat;
-    /* background-size: 100vw 100vh; */
-    background-attachment: fixed;
+    background-color: rgb(29, 29, 29);
     font-family: 'Montserrat';
-
+    overflow-x: hidden;
 }
 
 
-
-/* .animation-section {
-    opacity: 0;
-    filter: blur(5px);
-    transform: translateY(40px);
-    transition: all 1s;
-    animation-timing-function: ease-in;
-    animation-delay: 1s;
+#cursor{
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.159);
+    border-radius: 50%;
+    z-index: 9;
+    transition: ease-out 0.2s;
 }
 
-.show{
-    opacity: 1;
-    filter: blur(0px);
-    transform: translateY(0);
-} */
+#cursor::after{
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border: solid 1px rgba(255, 255, 255, 0.126);
+    border-radius: 50%;
+    top: 50%;
+    left:50%;
+    translate: -50% -50%;
+    transition: ease-out 0.3s;
+}
+
 
 /* title section */
 
@@ -55,19 +61,21 @@
 /* navbar */
 #title .navbar {
     position: fixed;
-    min-width: 100%;
+    right: 0;
+    left: 0;
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    /* border-radius: 20px; */
-    margin: 2px;
+    border-radius: 20px;
+    margin-top: 2%;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 2px;
+    border: solid 1px rgb(51, 51, 51, .5) ;
+    background: rgba(42, 42, 42, 0.21);
     z-index: 1;
 
 }
 
-
-nav .nav-link {
-    color: black;
-}
 
 .navbar-brand span {
     color: var(--main-color-dark);
@@ -86,19 +94,21 @@ nav .nav-link {
     color: var(--main-color-medium);
 }
 
+
+
 /* intro */
 
 #title .row h1 {
     font-size: 4rem;
     font-weight: bolder;
-    margin: 30vh 1rem 0 4rem;
-    color: var(--main-text-color);
+    margin: 37vh 1rem 0 4rem;
+    color: whitesmoke;
     
 }
 
 #title .row h2 {
     position: absolute;
-    color: var(--main-text-color);
+    color: whitesmoke;
     font-size: 2rem;
     margin: 1rem 4rem;
     
@@ -112,10 +122,13 @@ nav .nav-link {
 
 
 #coder-img {
-    margin: 25vh 2rem 0 4rem;
+    margin: 30vh 2rem 0 4rem;
     border-radius: 50%;
-    width: 350px;
+    width: 320px;
     max-width: 100%;
+    opacity: 0.8;
+    border: solid 5px #222222;
+    
 }
 
 #title hr {
@@ -127,15 +140,16 @@ nav .nav-link {
 
 /* passion secton */
 
-
+#passionL{
+    overflow: hidden;
+}
 
 #passion h1 {
     font-size: 2rem;
-    color: var(--main-color-light);
+    color: whitesmoke;
     padding: 7rem 0 0 7rem;
     letter-spacing: 1px;
     font-weight: bold;
-    animation: slideTop 2s ease 0 1 forwards forwards;
 }
 
 #passion span {
@@ -147,7 +161,6 @@ nav .nav-link {
     padding: 10vh 5%;
     width: 80%;
     align-items: center;
-    animation: slideTop 2s ease 0 1 forwards forwards;
 }
 
 #passion .container-fluid .row {
@@ -158,28 +171,27 @@ nav .nav-link {
     color: var(--main-color-medium);
     display: inline-block;
     margin-bottom: 2vh;
-    font-weight: 500;
+    font-weight: 800;
+    white-space: nowrap;
+    font-size: 1.4rem;
 }
 
 #passion .container-fluid p {
-    color: var(--main-text-color);
+    color: whitesmoke;
     display: inline-block;
+    font-size: 1.1rem;
 }
 
 
 #img-web-development {
     display: block;
     box-sizing: border-box;
-    /* box-shadow: 10px 10px 19px #262a2e, -10px -10px 19px #262a2e; */
-    /* border-radius: 10px; */
     width: 50%;
     max-width: 100%;
 }
 
 #img-reverse-engineer {
     display: block;
-    /* box-shadow: 10px 10px 19px #262a2e, -10px -10px 19px #262a2e; */
-    /* border-radius: 10px; */
     box-sizing: border-box;
     width: 50%;
     max-width: 100%;
@@ -195,24 +207,83 @@ nav .nav-link {
 /* about section */
 
 #about{
-    height: 100vh;
-    background-color: var(--main-background);
+    overflow: hidden;
+    background-color:transparent;
 }
 
 #about .container-fluid{
     padding: 10vh 3%;
     align-items: center;
+    
 }
 
 #about h1{
-    margin: auto 4rem;
+    padding: 7rem 0 0 7rem;
     font-size: 2rem;
-    color: var(--main-text-color);
+    color: white;
+    font-weight: bold;
+    letter-spacing: 1px;
+    white-space: nowrap;
 }
 
-#about span{
+#about h1 span{
     color: var(--main-color-medium);
 }
+
+#about .row{
+    padding: 5% 5% 5% 5%;
+}
+
+#about .card{
+    border: none;
+    width: 90%;
+    height: 100%;
+    background-color: #222222;   
+    padding: 5%;
+}
+
+#about .lang{
+    margin-top: 5%;
+}
+
+#about i{
+    padding: 5% 5% 5% 5%;
+    display: inline-block;
+    color: var(--main-color-medium);
+    font-size: 2rem;
+    
+}
+
+
+#about .row .card h3 {
+    position: relative;
+    margin-top: auto;
+    margin-bottom: auto;
+    display: inline-block;
+    font-size: medium;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    font-size: large;
+}
+
+
+#about .row .card span{
+    
+    padding: 3% 8% 8% 8%;
+    font-size: 14px;
+    color: white;
+}
+
+
+
+#objective{
+    text-align: center;
+    padding-left: 10%;
+    padding-right: 10%;
+    color: white;
+}
+
 
 #about hr {
     width: 70%;
@@ -221,16 +292,14 @@ nav .nav-link {
     margin: 0 auto;
 }   
 
-#about .profile-img{
-    max-width: 200px;
-    border-radius: 50%;
-}
+
 
 /* contact section */
 
 #contact h1 {
+    font-size: 2.5rem;
     padding-top: 10vh;
-    color: var(--main-color-light);
+    color: whitesmoke;
 }
 
 #contact .container-fluid {
@@ -241,7 +310,7 @@ nav .nav-link {
     margin-top: 5vh;
     padding: 2vh;
     margin-bottom: 5vh;
-    /* box-shadow: 0px 0px 20px #262a2e, -0px -0px 20px #262a2e; */
+    box-shadow: 0px 0px 3px #262a2e, -0px -0px 3px #262a2e;
     border-radius: 10px;
 }
 
@@ -257,17 +326,17 @@ nav .nav-link {
 }
 
 #contact h2 {
-    color: var(--main-color-light);
+    color: whitesmoke;
     margin: 1rem 0 1rem 0;
 }
 
 #contact p {
-    color: var(--main-text-color);
+    color: whitesmoke;
 }
 
 #contact a {
     text-decoration: none;
-    color: var(--main-text-color);
+    color: whitesmoke;
 
 }
 
@@ -276,7 +345,7 @@ nav .nav-link {
 }
 
 i {
-    color: var(--main-text-color);
+    color: whitesmoke;
     margin: 10px;
 }
 
@@ -290,8 +359,9 @@ i:hover {
 
 
 
-
 @media (max-width:1100px) {
+
+   
 
     #coder-img {
         margin: 20vh 2rem 0 4rem;
@@ -319,6 +389,31 @@ i:hover {
 
 @media (max-width:990px) {
 
+
+
+    #title .navbar {
+        padding: 3% 3% 3% 3%;
+        margin: 4% 4% 0 4%;
+        border-radius: 15px;
+        border: solid 1px rgb(51, 51, 51, .5) ;
+
+    }
+    
+    #title .navbar-toggler{
+        position: relative;
+        padding: 4%;
+        width: 2rem;
+        height: 2rem;
+    }
+
+    #title .navbar-toggler-icon{
+        position: absolute;
+        width: 1.2rem;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+
     #title .container-fluid {
         min-height: 100vh;
         padding: 0 1% 10vh 1%;
@@ -332,23 +427,48 @@ i:hover {
     }
 
     #title nav a {
-        font-size: 95%;
+        font-size: 1rem;
     }
 
     #title .row h1 {
-        font-size: 2rem;
+        font-size: 2.2rem;
         font-weight: bolder;
-        margin: 0 1rem 0 1rem;
-        color: var(--main-text-color);
+        margin: 2rem 1rem 0 1rem;
+        color: whitesmoke;
     }
 
 
     #title .row h2 {
-        color: var(--main-text-color);
+        color: whitesmoke;
         font-size: 1.5rem;
         margin: 1rem 1rem 0 1rem;
     }
 
+
+    #about{
+        text-align: center;
+    }
+    
+    #about .row .card{
+        width: 100%;
+    }
+
+    #about .row .card h3{
+
+       font-size: 1.3rem;
+       white-space: nowrap;
+    }
+
+    #about .row .card span{
+        font-size: 1rem;
+    }
+
+    #about .row .card i{
+        padding: 0;
+        font-size: 1.7rem;
+        width: 2rem;
+    }
+  
     #passion {
 
         text-align: center;
@@ -366,9 +486,11 @@ i:hover {
         margin-bottom: 5vh;
     }
 
+
+
     #passion h1 {
         font-size: 2rem;
-        color: var(--main-text-color);
+        color: whitesmoke;
         padding: 10vh 0 0 0;
         letter-spacing: 1px;
         font-weight: bolder;
@@ -405,5 +527,9 @@ i:hover {
         margin-top: 0;
     }
 
+   
+
 
 }
+
+

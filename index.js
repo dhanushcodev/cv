@@ -1,27 +1,15 @@
-// Can also be included with a regular script tag
-// import Typed from 'typed.js';
-
-// const observer = new IntersectionObserver((entries) => {
-//     entries.forEach((entry)=>{
-//         console.log(entry);
-//         if(entry.isIntersecting){
-//             entry.target.classList.add('show');
-//         }else{
-//             entry.target.classList.remove('show');
-//         }
-//     })
-// })
-
-// const hiddenElement = document.querySelectorAll('.animation-section');
-
-// hiddenElement.forEach((el)=> observer.observe(el));
-
-
 
 var typed = new Typed('.text-animation', {
-    strings: ["Web Developer", "Mobile Application Developer"],
+    strings: ["Web Developer", "App Developer"],
     typeSpeed: 40,
     backSpeed: 40,
     backDelay: 1000,
     loop: true
   });
+
+
+var curs = document.getElementById("cursor");
+document.addEventListener("mousemove",function(event){
+    curs.style.left = event.x+20 + "px";
+    curs.style.top = event.y+20 + "px";
+})
