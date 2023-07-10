@@ -212,7 +212,7 @@ html::-webkit-scrollbar{
 }
 
 #about .container-fluid{
-    padding: 10vh 3%;
+    padding: 10vh 5%;
     align-items: center;
     
 }
@@ -361,7 +361,9 @@ i:hover {
 
 @media (max-width:1100px) {
 
-   
+    #cursor{
+        display: none;
+    }
 
     #coder-img {
         margin: 20vh 2rem 0 4rem;
@@ -389,7 +391,9 @@ i:hover {
 
 @media (max-width:990px) {
 
-
+    #cursor{
+        display: none;
+    }
 
     #title .navbar {
         padding: 3% 3% 3% 3%;
@@ -449,6 +453,15 @@ i:hover {
         text-align: center;
     }
     
+    #about h1 {
+        font-size: 2rem;
+        color: whitesmoke;
+        padding: 10vh 0 0 0;
+        letter-spacing: 1px;
+        font-weight: bolder;
+
+    }
+
     #about .row .card{
         width: 100%;
     }
