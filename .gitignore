@@ -1,4 +1,4 @@
-~*.css
-*.min.css
-~*.js
-*.min.js
+*.css
+*.js
+!*min.css
+!*min.js
