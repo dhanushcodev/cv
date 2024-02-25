@@ -1,2 +1,2 @@
 # Dhanushkumark
-# is it actuall working?
+Tech stack: Html,Css,Javascript
