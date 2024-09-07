@@ -153,7 +153,7 @@ body {
   height: 100vh;
   z-index: 99;
 }
-.bottom-nav,
+
 .loader .spinner {
   display: flex;
   background-color: transparent;
@@ -181,7 +181,6 @@ body {
 }
 #nav,
 .arrow,
-.bottom-nav,
 .header {
   position: fixed;
 }
@@ -192,9 +191,12 @@ body {
 }
 #nav {
   left: 0;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, auto); /* 3 columns */
+  grid-auto-rows: max-content;
+  justify-items: center;
   align-items: center;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   padding: 1.5% 2%;
   width: 50%;
   margin-left: auto;
@@ -208,6 +210,9 @@ body {
   z-index: 9;
 }
 #nav h1 {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  justify-self: start;
   background: linear-gradient(45deg, #4bd2ff, #f7f);
   -webkit-background-clip: text;
   background-clip: text;
@@ -216,23 +221,17 @@ body {
   font-weight: 900;
 }
 #nav ion-icon {
+  grid-column: 3/4;
+  grid-row: 1/2;
+  justify-self: end;
   font-size: 1.3rem;
 }
 #footer a:hover ion-icon,
 #nav ion-icon:hover {
   scale: 1.2;
 }
-.bottom-nav {
-  justify-content: start;
-  align-items: center;
-  overflow: hidden;
-  top: 50vh;
-  left: 0;
-  transform: translateY(-50%);
-  width: 0;
-}
-.arrow,
-.bottom-nav-content-box {
+
+.arrow {
   display: flex;
   background-color: var(--nav-bg-color);
 }
@@ -249,29 +248,34 @@ body {
     opacity: 1;
   }
 }
+
 .bottom-nav-content-box {
-  flex-direction: column;
-  justify-content: center;
-  padding: 1.3rem;
+  width: 100%;
+  opacity: 0;
+  grid-column: 2/3;
+  grid-row: 1/2;
+  display: flex;
+  justify-content: space-between;
   text-align: center;
-  border: solid 2px var(--border-color);
-  border-top-right-radius: 1rem;
-  border-bottom-right-radius: 1rem;
-  border-left: 0;
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  transform: translateX(-100%);
-  transition: 1s;
+  overflow-y: hidden;
+  transform-origin: left;
+  transition: all 1s ease;
 }
-.bottom-nav-content-box a {
+.bottom-nav-anchor {
   display: block;
+  opacity: 0;
+  font-weight: bolder;
   text-decoration: none;
   text-transform: uppercase;
   font-size: 0.9rem;
-  padding: 1rem 0;
 }
 .bottom-nav-visible {
-  transform: translateX(0);
+  opacity: 1;
+}
+
+.bottom-nav-anchor-visible {
+  opacity: 0.5;
+  transition: all 1s ease;
 }
 .arrow {
   align-items: center;

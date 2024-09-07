@@ -32,22 +32,35 @@
     <header class="header">
       <div id="nav">
         <h1>DK</h1>
+        <div class="bottom-nav-content-box">
+          <a class="bottom-nav-anchor" onclick="slide(); scrollToEle('main')"
+            >home</a
+          >
+          <a class="bottom-nav-anchor" onclick="slide()" href="Resume.pdf"
+            >resume</a
+          >
+          <a
+            class="bottom-nav-anchor"
+            onclick="slide(); scrollToEle('skills-wrapper')"
+            >Skills</a
+          >
+          <a
+            class="bottom-nav-anchor"
+            onclick="slide(); scrollToEle('project-content')"
+            >Projects</a
+          >
+          <a
+            class="bottom-nav-anchor"
+            onclick="slide(); scrollToEle('bottom-bar')"
+            >Contact</a
+          >
+        </div>
         <ion-icon class="menu" onclick="slide()" name="menu-outline"></ion-icon>
         <ion-icon
           class="close menuinvisible"
           onclick="slide()"
           name="close-outline"
         ></ion-icon>
-      </div>
-
-      <div class="bottom-nav">
-        <div class="bottom-nav-content-box">
-          <a onclick="slide(); scrollToEle('main')">home</a>
-          <a onclick="slide()" href="Resume.pdf">resume</a>
-          <a onclick="slide(); scrollToEle('skills-wrapper')">Skills</a>
-          <a onclick="slide(); scrollToEle('project-content')">Projects</a>
-          <a onclick="slide(); scrollToEle('bottom-bar')">Contact</a>
-        </div>
       </div>
 
       <a class="arrow" onclick="scrollToEle('main')">

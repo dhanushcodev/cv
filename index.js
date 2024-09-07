@@ -6,20 +6,21 @@ let bottomnav = document.querySelector(".bottom-nav");
 let menu = document.querySelector(".menu");
 let close = document.querySelector(".close");
 let bottomnavcontent = document.querySelector(".bottom-nav-content-box");
+let bottomnavanchors = document.querySelectorAll(".bottom-nav-content-box a");
 let arrow = document.querySelector(".arrow");
 
 function checkMediaQuery(query) {
   return window.matchMedia(query).matches;
 }
 
-if (checkMediaQuery("(max-width: 900px)")) {
-  let project_container = document.querySelector(".project-card-container");
-  let projcards = document.querySelectorAll(".project-card");
-  project_container.classList.add("animateup");
-  for (let i = 0; i < projcards.length; i++) {
-    projcards[i].classList.remove("animateup");
-  }
-}
+// if (checkMediaQuery("(max-width: 900px)")) {
+//   let project_container = document.querySelector(".project-card-container");
+//   let projcards = document.querySelectorAll(".project-card");
+//   project_container.classList.add("animateup");
+//   for (let i = 0; i < projcards.length; i++) {
+//     projcards[i].classList.remove("animateup");
+//   }
+// }
 
 // function animate() {
 //   let cards = document.getElementsByClassName("animateup");
@@ -47,19 +48,21 @@ if (checkMediaQuery("(max-width: 900px)")) {
 // }
 
 function slide() {
-  if (bottomnav.classList.contains("visible")) {
+  if (bottomnavcontent.classList.contains("bottom-nav-visible")) {
     bottomnavcontent.classList.toggle("bottom-nav-visible");
+    bottomnavanchors.forEach((element) => {
+      element.classList.toggle("bottom-nav-anchor-visible");
+    });
     menu.classList.toggle("menuinvisible");
     close.classList.toggle("menuinvisible");
-    setTimeout(() => {
-      bottomnav.classList.toggle("visible");
-    }, 1000);
     return;
   }
 
-  bottomnav.classList.toggle("visible");
   menu.classList.toggle("menuinvisible");
   close.classList.toggle("menuinvisible");
+  bottomnavanchors.forEach((element) => {
+    element.classList.toggle("bottom-nav-anchor-visible");
+  });
   bottomnavcontent.classList.toggle("bottom-nav-visible");
 }
 

@@ -19,23 +19,28 @@
     font-size: 1.4rem;
   }
 
-  .bottom-nav {
-    overflow: hidden;
-  }
-
   .bottom-nav-content-box {
-    position: absolute;
-    left: 0;
-    top: 0;
-    padding: 1rem 0.5rem;
+    height: 0px;
+    width: 100%;
+    grid-column: 1/4;
+    grid-row: 2/3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: all 1s ease;
   }
 
-  .bottom-nav-content-box a {
+  .bottom-nav-anchor {
     display: block;
     text-decoration: none;
     text-transform: uppercase;
-    font-size: 0.8rem;
+    font-size: 1rem;
     padding: 1rem 0.5rem;
+  }
+
+  .bottom-nav-visible {
+    height: fit-content;
+    padding: 0.5rem;
   }
 
   #intro-text {
