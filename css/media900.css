@@ -75,7 +75,6 @@
     width: 90%;
     padding: 6rem 0 0 10vw;
     font-size: 0.9rem;
-    color: #ffffffbe;
   }
 
   #project-content {
@@ -90,7 +89,6 @@
   #project-content p {
     padding: 5px 0 0 10vw;
     font-size: 0.9rem;
-    color: #ffffffbe;
   }
 
   #project-content .project-card {
@@ -144,7 +142,6 @@
   #skills-wrapper p {
     padding: 5px 0 0 10vw;
     font-size: 0.7rem;
-    color: #ffffffbe;
   }
 
   #skills-wrapper .skills {

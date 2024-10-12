@@ -53,10 +53,14 @@ body {
   content: "";
 }
 #footer::before,
-#intro-text::before,
-.project-card .project-card-middle img {
+#intro-text::before{
   position: absolute;
   background-size: contain;
+}
+.project-card .project-card-middle img {
+  position: absolute;
+  filter: opacity(70%);
+  background-size: auto;
 }
 #nav h1,
 .intro-text-wrapper a,
@@ -67,7 +71,7 @@ body {
 #bottom-bar h6,
 #project-content h1,
 #skills-wrapper h1 {
-  background-image: linear-gradient(90deg, #b0f3f1, #ffcfdf);
+  background-image: var(--text-gradient);
   background-size: cover;
   color: transparent;
 }
@@ -80,13 +84,43 @@ body {
   --main-background-color: #0a0a13;
   --border-color: #262632;
   --nav-bg-color: rgba(38, 39, 50, 0.5);
+  --card-gradient: linear-gradient(180deg,rgba(35,37,49,.5),rgba(15,15,24,.5));
+  --text-gradient: linear-gradient(90deg, #b0f3f1, #ffcfdf);
+  --intro-text-gradient: linear-gradient(
+    -45deg,
+    #4bd2ff,
+    #ff62ff,
+    #6fdbff,
+    #f7f
+  );
+  --header-title-gradient: linear-gradient(45deg, #4bd2ff, #f7f);
+  --text-color: white;
+  --cursor-circle: white;
 }
+
+/* :root {
+  --main-background-color: rgb(255, 255, 255);
+  --border-color: #d4d4d400;
+  --nav-bg-color: #edededb8;
+  --card-gradient: linear-gradient(180deg, #f5f5f5, #f5f5f5);
+  --text-gradient: linear-gradient(90deg, black, black);
+  --intro-text-gradient: linear-gradient(
+    -45deg,
+    #4bd2ff,
+    #ff62ff,
+    #6fdbff,
+    #f7f
+  );
+  --header-title-gradient: linear-gradient(45deg, black, black);
+  --text-color: black;
+  --cursor-circle: black;
+} */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Montserrat, sans-serif;
-  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  color: var(--text-color);
 }
 html {
   scroll-behavior: smooth;
@@ -109,7 +143,7 @@ body {
   height: 40px;
   background-color: transparent;
   border-radius: 50%;
-  border: 1px solid #ffffff44;
+  border: 1px solid var(--cursor-circle);
   z-index: 9;
   transition: 0.2s ease-out;
   animation: 10s linear infinite cursoranime;
@@ -120,7 +154,7 @@ body {
 .spinner::after,
 .spinner::before {
   border-radius: 50%;
-  background-color: #fff;
+  background-color: var(--text-color);
 }
 #cursor #dot {
   width: 10px;
@@ -163,7 +197,7 @@ body {
   align-items: center;
   width: 40px;
   height: 40px;
-  border: 1px solid #fff;
+  border: 1px solid var(--text-color);
   border-radius: 50%;
   transition: 0.2s ease-out;
   animation: 2s linear infinite cursoranime;
@@ -213,7 +247,7 @@ body {
   grid-column: 1/2;
   grid-row: 1/2;
   justify-self: start;
-  background: linear-gradient(45deg, #4bd2ff, #f7f);
+  background: var(--header-title-gradient);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -329,7 +363,7 @@ body {
   z-index: 1;
 }
 #intro-text #hilight-text {
-  background: linear-gradient(-45deg, #4bd2ff, #ff62ff, #6fdbff, #f7f);
+  background: var(--intro-text-gradient);
   background-size: 400% 400%;
   -webkit-background-clip: text;
   background-clip: text;
@@ -357,7 +391,7 @@ body {
   content: "";
   width: 70%;
   height: 1px;
-  background-color: #fff;
+  background-color: var(--text-color);
   transition: 0.5s;
 }
 .intro-text-wrapper a:hover::after,
@@ -366,7 +400,7 @@ body {
   content: "";
   width: 100%;
   height: 1px;
-  background-color: #fff;
+  background-color: var(--text-color);
 }
 #footer {
   padding: 0.5rem 10rem;
@@ -393,11 +427,7 @@ body {
 #project-content .project-card,
 .skill-left-card,
 .skill-right-card {
-  background: linear-gradient(
-    180deg,
-    rgba(30, 32, 42, 0.5),
-    rgba(12, 12, 19, 0.5)
-  );
+  background: var(--card-gradient);
 }
 #footer ion-icon {
   font-size: 1.2rem;
@@ -411,7 +441,7 @@ body {
   width: 50%;
   padding: 6rem 0 10rem 17vw;
   font-size: 0.9rem;
-  color: #ffffffbe;
+  color: var(--text-color);
 }
 #project-content {
   overflow: hidden;
@@ -428,7 +458,7 @@ body {
 #project-content p {
   padding: 5px 0 0 17vw;
   font-size: 0.9rem;
-  color: #ffffffbe;
+  color: var(--text-color);
   margin-bottom: 8rem;
 }
 #project-content .project-card {
@@ -460,7 +490,7 @@ body {
   white-space: nowrap;
   text-transform: uppercase;
   font-size: 1rem;
-  color: #ffffff95;
+  color: var(--text-color);
 }
 .project-card .project-card-middle {
   position: relative;
@@ -500,7 +530,7 @@ body {
   content: "";
   width: 50%;
   height: 1px;
-  background-color: #fff;
+  background-color: var(--text-color);
   transition: 0.5s;
 }
 #skills-wrapper {
@@ -510,7 +540,7 @@ body {
 #skills-wrapper p {
   padding: 0 0 5rem 17vw;
   font-size: 0.9rem;
-  color: #ffffffbe;
+  color: var(--text-color);
 }
 #skills-wrapper .skills {
   margin: 3rem auto 5rem;
@@ -609,12 +639,14 @@ body {
   overflow: hidden;
   width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 2rem 0;
   opacity: 0.2;
 }
 #copyright p {
+  padding-bottom: 0.5rem;
   font-size: 0.7rem;
 }
 @media (max-width: 1200px) {
