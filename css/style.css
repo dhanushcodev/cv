@@ -461,18 +461,47 @@ body {
   color: var(--text-color);
   margin-bottom: 8rem;
 }
+
+#project-content .project-card-container{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns of equal width */
+  gap: 1rem; /* Space between rows and columns */
+  width: 70%; /* Optional: Adjust container width */
+  margin: 2rem auto; /* Center the grid horizontally */
+}
+
 #project-content .project-card {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   border: solid 1px var(--border-color);
   border-radius: 4rem;
   -webkit-backdrop-filter: blur(50px);
   backdrop-filter: blur(50px);
   padding: 4rem;
-  width: 55%;
-  height: max-content;
-  margin: 10rem auto 5rem;
+  height: 100%;
 }
+
+.project-card h2{
+  font-size: 2rem;
+}
+
+.project-card h3{
+  font-size: 1rem;
+  font-weight: 100;
+  margin-top: 0.5rem;
+}
+
+.project-card h4{
+  font-weight: 100;
+  font-size: 1rem;
+  background-image: var(--text-gradient);
+    background-size: cover;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+
 #bottom-bar .contact-card,
 #skills-wrapper .skills,
 .skill-left-card,

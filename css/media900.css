@@ -91,6 +91,15 @@
     font-size: 0.9rem;
   }
 
+  #project-content .project-card-container{
+    display: grid;
+    grid-template-columns: 1fr; /* Two columns of equal width */
+    gap: 2rem; /* Space between rows and columns */
+    width: 70%; /* Optional: Adjust container width */
+    margin: 2rem auto; /* Center the grid horizontally */
+    align-items: center;
+  }
+
   #project-content .project-card {
     display: flex;
     flex-direction: column;
@@ -98,7 +107,7 @@
     border: solid 1px var(--border-color);
     border-radius: 2rem;
     padding: 2rem 2.5rem;
-    width: 60%;
+    width: 100%;
   }
 
   .project-card .project-card-left h3 {
